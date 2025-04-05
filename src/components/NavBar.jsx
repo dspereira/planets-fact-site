@@ -21,38 +21,7 @@ export default function NavBar() {
           </button>
         </div>
         <BorderLine className={style.navHeaderSeparator}/>
-
-
-        <NavLinks />
-
-
-        {/* <ul className={style.navList}>
-          <li>
-            <Link to="/mercury">MERCURY</Link>
-          </li>
-          <li>
-            <Link to="/mercury">VENUS</Link>
-          </li>
-          <li>
-            <Link to="/mercury">EARTH</Link>
-          </li>
-          <li>
-            <Link to="/mercury">MARS</Link>
-          </li>
-          <li>
-            <Link to="/mercury">JUPITER</Link>
-          </li>
-          <li>
-            <Link to="/mercury">SATURN</Link>
-          </li>
-          <li>
-            <Link to="/mercury">URANUS</Link>
-          </li>
-          <li>
-            <Link to="/mercury">NEPTUNE</Link>
-          </li>
-        </ul> */}
-
+        <NavLinks isOpen={isMenuOpen}/>
       </nav>
       <BorderLine className={style.navSeparator}/>
     </>

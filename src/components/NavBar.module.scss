@@ -11,30 +11,11 @@
 
 }
 
-// Para remover
-.navList {
-    padding: 22px 40px 27px 0;
-    display: flex;
-    align-items: center;
-    gap: 33px;
-    justify-content: right;
-}
-
-
 .navTitle h1{
     font-family: var(--font-antonio);
     font-weight: var(--font-medium);
     font-size: 28px;
     letter-spacing: -1.05px;
-    color: #FFFFFF;
-}
-
-// para remover
-.navList a {
-    font-family: var(--font-spartan);
-    font-weight: var(--font-bold);
-    font-size: 11px;
-    letter-spacing: 1px;
     color: #FFFFFF;
 }
 
@@ -50,11 +31,11 @@
 }
 
 .menuOpen {
-    fill: #FFFFFF;
+    fill: rgba(255, 255, 255, 0.2);
 }
 
 .menuClose {
-    fill: rgba(255, 255, 255, 0.2);
+    fill: #FFFFFF;
 }
 
 .navHeaderSeparator {
@@ -73,21 +54,12 @@
     .navHeader {
         padding: 0;
     }
-    
-    // para remover
-    .navList {
-        padding: 0;
-    }
 }
 
 @media (max-width: 640px) {
     .navContainer {
         display: block;
         padding: 0;
-    }
-
-    .navList {
-        display: block;
     }
 
     .btn {

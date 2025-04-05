@@ -5,7 +5,7 @@ import BorderLine from "./BorderLine";
 import IconChevron from "../icons/IconChevron";
 import MiniPlanet from "./MiniPlanet";
 
-export default function NavLinks({ className }) {
+export default function NavLinks({ className, isOpen }) {
 
   if (!data || data.length === 0) {
     return <p>No data available</p>;
@@ -44,9 +44,14 @@ export default function NavLinks({ className }) {
         {items}
       </ul>
 
-      <ul className={`${style.listMobile} ${className}`}>
-        {itemsMobile}
-      </ul>
+
+      {
+        isOpen &&
+        <ul className={`${style.listMobile} ${className}`}>
+          {itemsMobile}
+        </ul>
+      }
+
     </>
   )
 }
