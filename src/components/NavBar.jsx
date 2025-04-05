@@ -3,6 +3,7 @@ import style from "./NavBar.module.scss"
 import IconHamburger from "../icons/IconHamburger"
 import { useState } from "react"
 import BorderLine from "./BorderLine";
+import NavLinks from "./NavLinks";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +21,12 @@ export default function NavBar() {
           </button>
         </div>
         <BorderLine className={style.navHeaderSeparator}/>
-        <ul className={style.navList}>
+
+
+        <NavLinks />
+
+
+        {/* <ul className={style.navList}>
           <li>
             <Link to="/mercury">MERCURY</Link>
           </li>
@@ -45,7 +51,8 @@ export default function NavBar() {
           <li>
             <Link to="/mercury">NEPTUNE</Link>
           </li>
-        </ul>
+        </ul> */}
+
       </nav>
       <BorderLine className={style.navSeparator}/>
     </>

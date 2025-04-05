@@ -7,7 +7,7 @@ import data from "./data/data.json"
 
 function App() {
 
-  console.log(data.find(p => p.name === "Venus"));
+  //console.log(data.find(p => p.name === "Venus"));
 
   return (
     <>

@@ -1,0 +1,22 @@
+$planet-colors: (
+    mercury: var(--mercury-color),
+    venus: var(--venus-color),
+    earth: var(--earth-color),
+    mars: var(--mars-color),
+    jupiter: var(--jupiter-color),
+    saturn: var(--saturn-color),
+    uranus: var(--uranus-color),
+    neptune: var(--neptune-color)
+);
+
+@each $planet, $color in $planet-colors {
+    .#{$planet} {
+        background-color: $color;
+    }
+}
+
+.miniPlanet {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
