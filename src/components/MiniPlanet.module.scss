@@ -1,3 +1,5 @@
+@use '../scss/utils' as u;
+
 $planet-colors: (
     mercury: var(--mercury-color),
     venus: var(--venus-color),
@@ -16,7 +18,7 @@ $planet-colors: (
 }
 
 .miniPlanet {
-    width: 20px;
-    height: 20px;
+    width: u.rem(20);
+    height: u.rem(20);
     border-radius: 100%;
 }

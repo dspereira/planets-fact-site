@@ -15,7 +15,7 @@ export default function NavBar() {
           <Link to="/" className={style.navTitle}><h1>THE PLANETS</h1></Link>
           <button
             className={style.btn}
-            onClick={e => setIsMenuOpen(s => !s)}
+            onClick={() => setIsMenuOpen(s => !s)}
           >
             <IconHamburger className={isMenuOpen ? style.menuOpen : style.menuClose}/>
           </button>

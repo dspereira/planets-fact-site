@@ -43,8 +43,6 @@ export default function NavLinks({ className, isOpen }) {
       <ul className={`${style.list} ${className}`}>
         {items}
       </ul>
-
-
       {
         isOpen &&
         <ul className={`${style.listMobile} ${className}`}>

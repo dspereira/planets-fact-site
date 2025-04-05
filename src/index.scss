@@ -8,7 +8,9 @@
     --font-medium: 500;
     --font-semi-bold: 600;
     --font-bold: 700;
-
+    --font-color: #FFF;
+    --font-color-20: rgba(255, 255, 255, 0.2);
+    --background-color: #070724;
     --mercury-color:#DEF4FC;
     --venus-color: #F7CC7F;
     --earth-color: #545BFE;
@@ -41,7 +43,7 @@ ul {
 body {
     font-family:var(--font-antonio);
     font-weight: 400;
-    background-color: #070724;
+    background-color: var(--background-color);
     background-image: url(./src/assets/background-stars.svg);
-    color: #FFF;
+    color: var(--font-color);
 }
