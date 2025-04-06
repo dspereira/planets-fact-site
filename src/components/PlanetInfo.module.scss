@@ -1,0 +1,95 @@
+@use '../scss/utils' as u;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: u.rem(23);
+}
+
+.title {
+    font-family: var(--font-antonio);
+    font-size: u.rem(80);
+    font-weight: var(--font-medium);
+    letter-spacing: 0px;
+    color: var(--font-color);
+}
+
+.info {
+    font-family: var(--font-spartan);
+    font-size: u.rem(14);
+    font-weight: var(--font-regular);
+    letter-spacing: 0px;
+    line-height: 25px;
+    color: var(--font-color);
+}
+
+.source {
+    font-family: var(--font-spartan);
+    font-size: u.rem(14);
+    font-weight: var(--font-regular);
+    line-height: 25px;
+    color: var(--font-color-50);
+    padding-top: u.rem(1);
+}
+
+.sourceLink {
+    display: inline-flex;
+    align-items: center;
+    gap: u.rem(8);
+    font-size: u.rem(14);
+    font-weight: var(--font-bold);
+    text-decoration: underline;
+}
+
+@media (max-width: u.em(880)) {
+
+    .container {
+        gap: u.rem(24);
+    }
+    
+    .title {
+        font-size: u.rem(48);
+    }
+    
+    .info {
+        font-size: u.rem(11);
+        line-height: 22px;
+    }
+    
+    .source {
+        font-size: u.rem(12);
+        padding-top: u.rem(8);
+    }
+    
+    .sourceLink {
+        gap: u.rem(4);
+        font-size: u.rem(12);
+    }
+}
+
+@media (max-width: u.em(640)) {
+    .container {
+        display: flex;
+        justify-content: center;
+        gap: u.rem(16);
+    }
+    
+    .title {
+        font-size: u.rem(40);
+        margin: auto;
+    }
+
+    .info {
+        font-size: u.rem(11);
+        line-height: 22px;
+        text-align: center;
+    }
+
+    .source {
+        font-size: u.rem(12);
+        padding-top: u.rem(16);
+        margin: auto;
+    }
+    
+}

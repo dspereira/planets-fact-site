@@ -8,7 +8,7 @@ import MainPage from "./pages/MainPaige";
 
 function App() {
 
-  //console.log(data.find(p => p.name === "Venus"));
+  console.log(data.find(p => p.name === "Venus"));
 
   return (
     <>
