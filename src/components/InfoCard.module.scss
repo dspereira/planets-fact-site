@@ -1,0 +1,66 @@
+@use '../scss/utils' as u;
+
+.card {
+    display: inline-flex;
+    flex-direction: column;
+    gap: u.rem(4);
+    border: 1px solid var(--font-color-20);
+    padding: u.rem(20) u.rem(104) u.rem(27) u.rem(23);
+}
+
+.label {
+    font-family:var(--font-spartan);
+    font-size: u.rem(11);
+    font-weight: var(--font-bold);
+    letter-spacing: 1px;
+    line-height: 25px;
+    color: var(--font-color-50);
+}
+
+.data {
+    font-family: var(--font-antonio);
+    font-size: u.rem(40);
+    font-weight: var(--font-medium);
+    letter-spacing: -1.5px;
+    color: var(--font-color);
+}
+
+
+@media (max-width: u.em(880)) {
+    .card {
+        gap: u.rem(6);
+        padding: u.rem(16) u.rem(69) u.rem(19) u.rem(15);
+    }
+
+    .label {
+        font-size: u.rem(8);
+        letter-spacing: 0.73px;
+        line-height: 16px;
+    }
+
+    .data {
+        font-size: u.rem(24);
+        letter-spacing: -0.9px;
+    }
+}
+
+@media (max-width: u.em(640)) {
+    .card {
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: u.rem(6);
+        padding: u.rem(9) u.rem(24) u.rem(13) u.rem(24);
+    }
+
+    .label {
+        font-size: u.rem(8);
+        padding-top: 4px;
+    }
+
+    .data {
+        font-size: u.rem(20);
+        letter-spacing: -0.75px;
+    }
+}

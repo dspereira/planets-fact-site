@@ -13,6 +13,10 @@
     font-weight: var(--font-bold);
     font-size: u.rem(11);
     letter-spacing: 1px;
+    color: var(--font-color-75);
+}
+
+.listLink span:hover {
     color: var(--font-color);
 }
 
@@ -38,7 +42,7 @@
     margin-left: auto;
 }
 
-@media (max-width: u.em(800)) {
+@media (max-width: u.em(880)) {
     .list {
         padding: 0;
     }

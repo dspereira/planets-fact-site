@@ -4,6 +4,7 @@ import './App.css'
 import NavBar from './components/NavBar'
 
 import data from "./data/data.json"
+import MainPage from "./pages/MainPaige";
 
 function App() {
 
@@ -14,9 +15,9 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<NavBar />} />
-          <Route path="/mercury" element={<NavBar />} />
-          <Route path="/venus" element={<NavBar />} />
+          <Route path="/" element={<MainPage />} />
+          <Route path="/mercury" element={<MainPage />} />
+          <Route path="/venus" element={<MainPage />} />
         </Routes>  
       </BrowserRouter>
     </>

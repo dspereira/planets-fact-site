@@ -1,8 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+
+@font-face {
+	font-family: "Spartan";
+	src: url("./assets/fonts/Spartan-Regular.ttf") format(truetype);
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+	font-family: "Spartan";
+	src: url("./assets/fonts/Spartan-Medium.ttf") format(truetype);
+    font-style: normal;
+    font-weight: 500;
+}
+
+@font-face {
+	font-family: "Spartan";
+	src: url("./assets/fonts/Spartan-Bold.ttf") format(truetype);
+    font-style: normal;
+    font-weight: 700;
+}
 
 :root {
-    --font-spartan: "League Spartan", sans-serif;
+    --font-spartan: "Spartan";
     --font-antonio: "Antonio", sans-serif;
     --font-regular: 400;
     --font-medium: 500;
@@ -10,6 +32,11 @@
     --font-bold: 700;
     --font-color: #FFF;
     --font-color-20: rgba(255, 255, 255, 0.2);
+    --font-color-50: rgba(255, 255, 255, 0.5);
+    --font-color-75: rgba(255, 255, 255, 0.75);
+    
+    
+    
     --background-color: #070724;
     --mercury-color:#DEF4FC;
     --venus-color: #F7CC7F;
@@ -42,7 +69,7 @@ ul {
 
 body {
     font-family:var(--font-antonio);
-    font-weight: 400;
+    font-weight: var(--font-regular);
     background-color: var(--background-color);
     background-image: url(./src/assets/background-stars.svg);
     color: var(--font-color);
