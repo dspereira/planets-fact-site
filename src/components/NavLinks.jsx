@@ -11,7 +11,7 @@ export default function NavLinks({ className, isOpen }) {
     return <p>No data available</p>;
   }
 
-  const items = data.map(e=> (
+  const items = data.map(e => (
       <li key={e.name}>
         <Link
           to={`/${e.name.toLowerCase()}`}

@@ -61,19 +61,22 @@ export default function MainPage({ data }) {
           </div>
           
           <div className={style.buttons}>
-            <Button 
+            <Button
+              planetName={planetName}
               index="01"
               label="overview"
               isActive={activeTab === tabNames[1] ? true : false}
               onClick={() => setActiveTab(tabNames[1])}
             />
-            <Button 
+            <Button
+            planetName={planetName}
               index="02"
               label="internal structure"
               isActive={activeTab === tabNames[2] ? true : false}
               onClick={() => setActiveTab(tabNames[2])}
             />
-            <Button 
+            <Button
+            planetName={planetName}
               index="03"
               label="surface geology"
               isActive={activeTab === tabNames[3] ? true : false}
