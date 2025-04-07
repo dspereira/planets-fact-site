@@ -1,0 +1,41 @@
+@use '../scss/utils' as u;
+
+//1110px
+.gridMain {
+    display: grid;
+    grid-template-columns: 1fr repeat(12, calc((u.rem(1110) - 11 * 30px) / 12)) 1fr;
+    grid-template-rows: repeat(3, auto);;
+    column-gap: 30px;
+}
+
+.infoCardsContainer {
+    grid-column: 2 / -2;
+    grid-row: 6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttons {
+    grid-column: 10 / -2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(16);
+    padding-top: u.rem(39);
+    padding-bottom: u.rem(87);
+}
+
+.planetInfo {
+    grid-column: 10 / -2;
+    grid-row: 1;
+    padding-top: u.rem(126);
+}
+
+.planetImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2 / -6;
+    grid-row: 1 / 3;
+}
