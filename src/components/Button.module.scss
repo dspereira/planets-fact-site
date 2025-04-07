@@ -1,0 +1,69 @@
+@use '../scss/utils' as u;
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: u.rem(28);
+    width: 100%;
+    max-width: u.rem(350);
+    background-color: transparent;
+    border: 1px solid var(--font-color-20);
+    padding: u.rem(12) 0 u.rem(11) u.rem(28);
+
+    font-family: var(--font-spartan);
+    font-size: u.rem(12);
+    font-weight: var(--font-bold);
+    line-height: 25px;
+    letter-spacing: 2.57px;
+
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--button-hover-color);
+    transition: background-color 0.3s;
+}
+
+.index {
+    color: var(--font-color-50);
+}
+
+.label {
+    color: var(--font-color);
+}
+
+
+.planetColor {
+    background-color: red;
+}
+
+
+@media (max-width: u.em(880)) {
+    .btn {
+        max-width: u.rem(280);
+        padding: u.rem(8) 0 u.rem(7) u.rem(20);
+        font-size: u.rem(9);
+        letter-spacing: 1.93px;
+    }
+}
+
+@media (max-width: u.em(640)) {
+    .btn {
+        display: inline-block;
+        width: auto;
+        padding: u.rem(20) u.rem(4);
+        border: none;
+    }
+
+    .index {
+        display: none;
+    }
+
+
+    .planetColor {
+        background-color: transparent;
+        border-bottom: 4px solid red;
+    }
+    
+}

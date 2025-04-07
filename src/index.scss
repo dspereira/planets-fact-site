@@ -34,6 +34,7 @@
     --font-color-20: rgba(255, 255, 255, 0.2);
     --font-color-50: rgba(255, 255, 255, 0.5);
     --font-color-75: rgba(255, 255, 255, 0.75);
+    --button-hover-color: rgba(216, 216, 216, 0.2);
     
     
     
@@ -73,4 +74,8 @@ body {
     background-color: var(--background-color);
     background-image: url(./src/assets/background-stars.svg);
     color: var(--font-color);
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
 }
