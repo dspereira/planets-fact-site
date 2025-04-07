@@ -1,43 +1,84 @@
+import { useState } from "react";
 import Button from "../components/Button";
 import InfoCard from "../components/InfoCard";
 import NavBar from "../components/NavBar";
 import PlanetInfo from "../components/PlanetInfo";
 
 import style from "./MainPaige.module.scss";
+import PlanetImage from "../components/PlanetImage";
 
-import planet from "../assets/planet-earth.svg";
+const tabNames = {
+  1: "overview",
+  2: "structure",
+  3: "geology"
+}
 
-import planetJupiter from "../assets/planet-jupiter.svg";
+export default function MainPage({ data }) {
+  const [activeTab, setActiveTab] = useState(tabNames[1]);
+  const [planetName, setPlanetName] = useState("");
 
-export default function MainPage() {
+  if (data.name.toLowerCase() !== planetName) {
+    setPlanetName(data.name.toLowerCase());
+    setActiveTab(tabNames[1]);
+  }
+
+  console.log("Main Page: ", data);
+
+  const image = data.images.planet;
+
+  console.log(image);
+
   return (
     <>
       <header>
         <NavBar />
       </header>
-
       <main>
         <section className={style.gridMain}>
 
           <div className={style.planetImage}>
-            <img src={planetJupiter} alt="Planet Image" />
+            <PlanetImage 
+              planetImage={
+                activeTab === tabNames[2] ? data.images.internal : data.images.planet
+              }
+              geologyImage={activeTab === tabNames[3] && data.images.geology}
+            />
           </div>
           
           <div className={style.infoCardsContainer}>
-            <InfoCard label="Rotation time" data="243 days"/>
-            <InfoCard label="Rotation time" data="243 days"/> 
-            <InfoCard label="Rotation time" data="243 days"/> 
-            <InfoCard label="Rotation time" data="243 days"/>
+            <InfoCard label="rotation time" data={data.rotation}/>
+            <InfoCard label="revolution time" data={data.revolution}/> 
+            <InfoCard label="radius" data={data.radius}/> 
+            <InfoCard label="average temp." data={data.temperature}/>
           </div>
 
           <div className={style.planetInfo}>
-            <PlanetInfo planet="eart" info="Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive."></PlanetInfo>
+            <PlanetInfo 
+              planet={planetName}
+              info={data[activeTab].content}
+            >
+            </PlanetInfo>
           </div>
           
           <div className={style.buttons}>
-            <Button index="01" label="overview" isActive={false}/>
-            <Button index="01" label="overview" isActive={false}/>
-            <Button index="01" label="overview" isActive={false}/>
+            <Button 
+              index="01"
+              label="overview"
+              isActive={activeTab === tabNames[1] ? true : false}
+              onClick={() => setActiveTab(tabNames[1])}
+            />
+            <Button 
+              index="02"
+              label="internal structure"
+              isActive={activeTab === tabNames[2] ? true : false}
+              onClick={() => setActiveTab(tabNames[2])}
+            />
+            <Button 
+              index="03"
+              label="surface geology"
+              isActive={activeTab === tabNames[3] ? true : false}
+              onClick={() => setActiveTab(tabNames[3])}
+            />
           </div>
 
         </section>

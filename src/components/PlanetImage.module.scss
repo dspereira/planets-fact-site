@@ -1,0 +1,14 @@
+@use '../scss/utils' as u;
+
+.container {
+    position: relative;
+}
+
+.geology {
+    position: absolute;
+    width: u.rem(163);
+    height: auto;
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%, 50%);
+}

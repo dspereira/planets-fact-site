@@ -1,8 +1,6 @@
 import style from "./PlanetInfo.module.scss"
-import iconSource from '../assets/icon-source.svg';
 
 export default function PlanetInfo({ planet, info }) {
-
   return (
     <div className={style.container}>
       <h1 className={style.title}>{planet.toUpperCase()}</h1>
@@ -11,12 +9,12 @@ export default function PlanetInfo({ planet, info }) {
         <span>Source : </span>
         <a
           className={style.sourceLink}
-          href={`https://en.wikipedia.org/wiki/${planet.toLowerCase()}`}
+          href={`https://en.wikipedia.org/wiki/${planet.toLowerCase()}_(planet)`}
           target="_blank"
           rel="noopener noreferrer"
         >
           Wikipedia
-          <img src={iconSource} width="12" height="12" alt="Source Icon"/>
+          <img src="./assets/icon-source.svg" width="12" height="12" alt="Source Icon"/>
         </a>
       </p>
     </div>
