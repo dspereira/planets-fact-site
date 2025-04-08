@@ -1,8 +1,6 @@
 @use '../scss/utils' as u;
 
 .list {
-    //padding: u.rem(22) u.rem(40) u.rem(27) 0;
-    
     display: flex;
     align-items: center;
     gap: u.rem(33);
@@ -14,12 +12,32 @@
     font-weight: var(--font-bold);
     font-size: u.rem(11);
     letter-spacing: 1px;
-    color: var(--font-color-75);
+    color: var(--font-color-75); 
 }
 
 .listLink span:hover {
     color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    height: 85px;
 }
+
+.listLink span::after {
+    content: "";
+    opacity: 0;
+    position: absolute;
+    border-top: 4px solid var(--planet-color);
+    width: 100%;
+    top: 0;
+}
+
+.listLink span:hover::after {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
 
 .listMobile {
     display: none;
@@ -47,6 +65,18 @@
     .list {
         padding: 0;
     }
+
+    .listLink span:hover {
+        height: auto;
+    }
+
+    .listLink span::after {
+        display: none;
+    }
+
+    .listLink span:hover::after {
+        display: none;
+    }
 }
 
 @media (max-width: u.em(700)) {
@@ -55,11 +85,12 @@
     }
 
     .listMobile {
-        display: block;  
+        display: block;    
     }
 
     .listLink span {
         font-size: u.rem(15);
         letter-spacing: 1.36px;
+        color: var(--font-color);
     }
 }

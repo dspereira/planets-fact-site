@@ -12,7 +12,10 @@ export default function NavLinks({ className, isOpen, setIsMenuOpen }) {
   }
 
   const items = data.map(e => (
-      <li key={e.name}>
+      <li 
+        key={e.name} 
+        style={{'--planet-color': `var(--${e.name.toLowerCase()}-color)`}}
+      >
         <Link
           to={`/${e.name.toLowerCase()}`}
           className={style.listLink}
