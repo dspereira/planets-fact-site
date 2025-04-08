@@ -27,6 +27,13 @@
     grid-row: 6;
 }
 
+.rotationCard,
+.revolutionCard,
+.radiusCard,
+.tempCard {
+    padding-bottom: u.rem(56);
+}
+
 .buttons {
     grid-column: 10 / -2;
     grid-row: 2;
@@ -75,9 +82,6 @@
     }
 }
 
-//@media (max-width: u.em(1000)) {
-//1130
-//1000
 @media (max-width: u.em(1000)) {
     .gridMain {
         grid-template-columns: 1fr repeat(12, calc((100% - 80px - 11 * 10px) / 12)) 1fr;
@@ -120,6 +124,7 @@
     .radiusCard,
     .tempCard {
         padding-top: u.rem(37);
+        padding-bottom: u.rem(36);
     }
 }
 
