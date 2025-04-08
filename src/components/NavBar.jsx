@@ -5,9 +5,7 @@ import { useState } from "react"
 import BorderLine from "./BorderLine";
 import NavLinks from "./NavLinks";
 
-export default function NavBar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+export default function NavBar({ isMenuOpen, setIsMenuOpen }) {
   return (
     <>
       <nav className={style.navContainer}>
@@ -21,7 +19,7 @@ export default function NavBar() {
           </button>
         </div>
         <BorderLine className={style.navHeaderSeparator}/>
-        <NavLinks isOpen={isMenuOpen}/>
+        <NavLinks isOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
       </nav>
       <BorderLine className={style.navSeparator}/>
     </>

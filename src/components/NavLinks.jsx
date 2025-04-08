@@ -5,7 +5,7 @@ import BorderLine from "./BorderLine";
 import IconChevron from "../icons/IconChevron";
 import MiniPlanet from "./MiniPlanet";
 
-export default function NavLinks({ className, isOpen }) {
+export default function NavLinks({ className, isOpen, setIsMenuOpen }) {
 
   if (!data || data.length === 0) {
     return <p>No data available</p>;
@@ -23,8 +23,12 @@ export default function NavLinks({ className, isOpen }) {
     )
   );
 
-  const itemsMobile = data.map(e=> (
-      <li key={e.name} className={style.listItem}>
+  const itemsMobile = data.map(e => (
+      <li 
+        key={e.name} 
+        className={style.listItem}
+        onClick={() => setIsMenuOpen(false)}
+      >
         <Link
           to={`/${e.name.toLowerCase()}`}
           className={style.listLink}

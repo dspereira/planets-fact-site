@@ -17,6 +17,7 @@ const tabNames = {
 export default function MainPage({ data }) {
   const [activeTab, setActiveTab] = useState(tabNames[1]);
   const [planetName, setPlanetName] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   if (data.name.toLowerCase() !== planetName) {
     setPlanetName(data.name.toLowerCase());
@@ -28,9 +29,9 @@ export default function MainPage({ data }) {
   return (
     <>
       <header>
-        <NavBar />
+        <NavBar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
       </header>
-      <main>
+      <main className={isMenuOpen ? style.hide : style.show}>
         <section className={style.gridMain}>
 
           <div className={style.planetImage}>
