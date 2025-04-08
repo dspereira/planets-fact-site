@@ -47,12 +47,14 @@
     }
 }
 
-@media (max-width: u.em(640)) {
+@media (max-width: u.em(700)) {
     .btn {
         display: inline-block;
         width: auto;
         padding: u.rem(20) u.rem(4);
         border: none;
+
+       background-color: transparent !important;
     }
 
     .index {
@@ -60,7 +62,6 @@
     }
 
     .planetColor {
-        background-color: transparent;
         border-bottom: 4px solid var(--planet-color);
     }
 }

@@ -6,6 +6,7 @@ import PlanetInfo from "../components/PlanetInfo";
 
 import style from "./MainPaige.module.scss";
 import PlanetImage from "../components/PlanetImage";
+import BorderLine from "../components/BorderLine";
 
 const tabNames = {
   1: "overview",
@@ -63,7 +64,7 @@ export default function MainPage({ data }) {
             </PlanetInfo>
           </div>
           
-          <div className={style.buttons}>
+          <div className={`${style.buttons} ${style.btnWide}`}>
             <Button
               planetName={planetName}
               index="01"
@@ -72,19 +73,44 @@ export default function MainPage({ data }) {
               onClick={() => setActiveTab(tabNames[1])}
             />
             <Button
-            planetName={planetName}
+              planetName={planetName}
               index="02"
               label="internal structure"
               isActive={activeTab === tabNames[2] ? true : false}
               onClick={() => setActiveTab(tabNames[2])}
             />
             <Button
-            planetName={planetName}
+              planetName={planetName}
               index="03"
               label="surface geology"
               isActive={activeTab === tabNames[3] ? true : false}
               onClick={() => setActiveTab(tabNames[3])}
             />
+          </div>
+
+          <div className={`${style.buttons} ${style.btnLow}`}>
+            <Button
+              planetName={planetName}
+              label="overview"
+              isActive={activeTab === tabNames[1] ? true : false}
+              onClick={() => setActiveTab(tabNames[1])}
+            />
+            <Button
+              planetName={planetName}
+              label="structure"
+              isActive={activeTab === tabNames[2] ? true : false}
+              onClick={() => setActiveTab(tabNames[2])}
+            />
+            <Button
+              planetName={planetName}
+              label="geology"
+              isActive={activeTab === tabNames[3] ? true : false}
+              onClick={() => setActiveTab(tabNames[3])}
+            />
+          </div>
+
+          <div className={style.boderSeparationButtons}>
+           <BorderLine />
           </div>
 
         </section>
