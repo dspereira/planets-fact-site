@@ -5,7 +5,10 @@
     flex-direction: column;
     gap: u.rem(4);
     border: 1px solid var(--font-color-20);
-    padding: u.rem(20) u.rem(104) u.rem(27) u.rem(23);
+    //padding: u.rem(20) u.rem(104) u.rem(27) u.rem(23);
+    width: 100%;
+    // max-width: u.rem(255);
+    padding: u.rem(20) 0 u.rem(27) u.rem(23);
 }
 
 .label {
@@ -26,7 +29,7 @@
 }
 
 
-@media (max-width: u.em(880)) {
+@media (max-width: u.em(1000)) {
     .card {
         gap: u.rem(6);
         padding: u.rem(16) u.rem(69) u.rem(19) u.rem(15);

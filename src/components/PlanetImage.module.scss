@@ -12,3 +12,34 @@
     right: 50%;
     transform: translate(50%, 50%);
 }
+
+.saturnGeology {
+    position: absolute;
+    width: u.rem(163);
+    top: 45%;
+    right: 50%;
+    transform: translate(50%, 50%);
+}
+
+@media (max-width: u.em(1000)) {
+
+    .container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .planet {
+        width: 63.3%;
+        height: auto;
+    }
+
+    .geology {
+        width: u.rem(100);
+    }
+
+    .saturnGeology {
+        width: u.rem(100);   
+    }
+}

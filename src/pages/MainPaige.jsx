@@ -24,10 +24,6 @@ export default function MainPage({ data }) {
 
   console.log("Main Page: ", data);
 
-  const image = data.images.planet;
-
-  console.log(image);
-
   return (
     <>
       <header>
@@ -37,7 +33,8 @@ export default function MainPage({ data }) {
         <section className={style.gridMain}>
 
           <div className={style.planetImage}>
-            <PlanetImage 
+            <PlanetImage
+              planetName={planetName}
               planetImage={
                 activeTab === tabNames[2] ? data.images.internal : data.images.planet
               }
@@ -45,10 +42,16 @@ export default function MainPage({ data }) {
             />
           </div>
           
-          <div className={style.infoCardsContainer}>
+          <div className={style.rotationCard}>
             <InfoCard label="rotation time" data={data.rotation}/>
+          </div>
+          <div className={style.revolutionCard}>
             <InfoCard label="revolution time" data={data.revolution}/> 
+          </div>
+          <div className={style.radiusCard}>
             <InfoCard label="radius" data={data.radius}/> 
+          </div>
+          <div className={style.tempCard}>
             <InfoCard label="average temp." data={data.temperature}/>
           </div>
 

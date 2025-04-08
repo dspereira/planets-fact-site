@@ -8,7 +8,6 @@ import MainPage from "./pages/MainPaige";
 
 function App() {
 
-  //console.log(data.find(p => p.name === "Venus"));
   const routes = data.map(e => 
     <Route
       path={`/${e.name.toLowerCase()}`}
@@ -16,9 +15,6 @@ function App() {
     />
 
   );
-
-  //console.log(routes);
-
 
   return (
     <>

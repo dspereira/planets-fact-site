@@ -5,7 +5,7 @@
     align-items: center;
     gap: u.rem(28);
     width: 100%;
-    max-width: u.rem(350);
+    //max-width: u.rem(350);
     background-color: transparent;
     border: 1px solid var(--font-color-20);
     padding: u.rem(12) 0 u.rem(11) u.rem(28);
@@ -38,9 +38,9 @@
     background-color: var(--planet-color) !important;
 }
 
-@media (max-width: u.em(880)) {
+@media (max-width: u.em(1000)) {
     .btn {
-        max-width: u.rem(280);
+        //max-width: u.rem(280);
         padding: u.rem(8) 0 u.rem(7) u.rem(20);
         font-size: u.rem(9);
         letter-spacing: 1.93px;
