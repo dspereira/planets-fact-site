@@ -24,8 +24,6 @@ export default function MainPage({ data }) {
     setActiveTab(tabNames[1]);
   }
 
-  console.log("Main Page: ", data);
-
   return (
     <>
       <header>

@@ -39,23 +39,21 @@
     }
 
     .saturnGeology {
-        width: u.rem(100);   
+        width: u.rem(100);
     }
 }
 
 @media (max-width: u.em(700)) {
-    .container {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
+    .planet {
+        width: 38.4%;
+        height: auto;
     }
 
-    // está errado tamanho dos planetas corrigir depois
-    .planet {
-        //width: 60.7%;
-        //width: 100%;
-        width: 39%;
-        height: auto;
+    .geology {
+        width: u.rem(60);
+    }
+
+    .saturnGeology {
+        width: u.rem(60);
     }
 }

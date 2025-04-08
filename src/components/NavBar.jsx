@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom"
-import style from "./NavBar.module.scss"
-import IconHamburger from "../icons/IconHamburger"
-import { useState } from "react"
+import { Link } from "react-router-dom";
+import style from "./NavBar.module.scss";
+import IconHamburger from "../icons/IconHamburger";
 import BorderLine from "./BorderLine";
 import NavLinks from "./NavLinks";
 
