@@ -29,7 +29,9 @@ export default function MainPage({ data }) {
       <header>
         <NavBar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
       </header>
-      <main className={isMenuOpen ? style.hide : style.show}>
+      {/* <main className={`${isMenuOpen ? style.hide : style.show}`}> */}
+
+      <main className={isMenuOpen ? style.mainVisibility : ""}>
         <section className={style.gridMain}>
 
           <div className={style.planetImage}>

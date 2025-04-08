@@ -1,13 +1,5 @@
 @use '../scss/utils' as u;
 
-.show {
-    display: block;
-}
-
-.hide {
-    display: none;
-}
-
 .gridMain {
     display: grid;
     grid-template-columns: 1fr repeat(12, calc((u.rem(1110) - 11 * 30px) / 12)) 1fr;
@@ -71,8 +63,9 @@
     display: none;
 }
 
-//@media (max-width: u.em(1000)) {
-//880
+.mainVisibility {
+    display: block;
+}
 
 @media (max-width: u.em(1200)) {
     .gridMain {
@@ -204,4 +197,7 @@
         padding-bottom: u.rem(47);
     }
 
+    .mainVisibility {
+        display: none;
+    }
 }
