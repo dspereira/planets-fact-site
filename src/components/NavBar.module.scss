@@ -2,13 +2,15 @@
 
 .navContainer {
     width: 100%;
+    height: u.rem(85);
+    padding-left: u.rem(32);
+    padding-right: u.rem(42);
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .navHeader {
-    padding: u.rem(27) 0 u.rem(27) u.rem(32);
     display: block;
 }
 
@@ -49,8 +51,8 @@
         flex-direction: column;
         justify-content: center;
         gap: u.rem(39);
-        padding-top: u.rem(32);
-        padding-bottom: u.rem(27);
+        height: u.rem(159);
+        padding: 0;
     }
 
     .navHeader {
@@ -61,6 +63,7 @@
 @media (max-width: u.em(700)) {
     .navContainer {
         display: block;
+        height: u.rem(68);
         padding: 0;
     }
 
