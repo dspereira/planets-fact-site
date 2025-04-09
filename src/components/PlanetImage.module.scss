@@ -4,6 +4,21 @@
     position: relative;
 }
 
+.planet {
+    width: 100%;
+    height: auto;
+    animation: grow 0.5s forwards;
+}
+
+@keyframes grow {
+    from {
+      width: 80%;
+    }
+    to {
+      width: 100%;
+    }
+}
+
 .geology {
     position: absolute;
     width: u.rem(163);
@@ -32,6 +47,16 @@
     .planet {
         width: 63.3%;
         height: auto;
+        animation: grow 0.3s forwards;
+    }
+
+    @keyframes grow {
+        from {
+            width: 45%;
+        }
+        to {
+            width: 63.3%;
+        }
     }
 
     .geology {
@@ -47,6 +72,16 @@
     .planet {
         width: 38.4%;
         height: auto;
+        animation: grow 0.3s forwards;
+    }
+
+    @keyframes grow {
+        from {
+            width: 20%;
+        }
+        to {
+            width: 38.4%;
+        }
     }
 
     .geology {

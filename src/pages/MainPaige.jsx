@@ -36,6 +36,7 @@ export default function MainPage({ data }) {
 
           <div className={style.planetImage}>
             <PlanetImage
+              key={`${planetName}${activeTab}`}
               planetName={planetName}
               planetImage={
                 activeTab === tabNames[2] ? data.images.internal : data.images.planet
