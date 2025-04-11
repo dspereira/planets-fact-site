@@ -7,6 +7,7 @@ import PlanetInfo from "../components/PlanetInfo";
 import style from "./MainPaige.module.scss";
 import PlanetImage from "../components/PlanetImage";
 import BorderLine from "../components/BorderLine";
+import { useMobileMenu } from "../contexts/MobileMenuContext";
 
 const tabNames = {
   1: "overview",
@@ -14,14 +15,11 @@ const tabNames = {
   3: "geology"
 }
 
-export const MenuContext = createContext();
-
-
 export  function MainPage({ data }) {
   const [activeTab, setActiveTab] = useState(tabNames[1]);
   const [planetName, setPlanetName] = useState("");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const isMobileMenuOpen = useMobileMenu(); 
+  
   if (data.name.toLowerCase() !== planetName) {
     setPlanetName(data.name.toLowerCase());
     setActiveTab(tabNames[1]);
@@ -30,16 +28,9 @@ export  function MainPage({ data }) {
   return (
     <>
       <header>
-        <MenuContext.Provider
-          value= {{
-            isMobileMenuOpen: isMenuOpen,
-            onChangeMobileMenu: () => setIsMenuOpen(s => !s)
-          }}
-        >
-          <NavBar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
-        </MenuContext.Provider>
+        <NavBar />
       </header>
-      <main className={isMenuOpen ? style.mainVisibility : ""}>
+      <main className={isMobileMenuOpen ? style.mainVisibility : ""}>
         <section className={style.gridMain}>
 
           <div className={style.planetImage}>

@@ -1,10 +1,8 @@
 import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
-
 import './App.css'
-import NavBar from './components/NavBar'
-
 import data from "./data/data.json"
 import { MainPage } from "./pages/MainPaige";
+import { MobileMenuProvider } from "./contexts/MobileMenuContext";
 
 function App() {
 
@@ -18,20 +16,22 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route 
-            path="/" 
-            element={
-              <MainPage 
-                data={data.find(p => p.name.toLowerCase() === "earth")}
-              />
-            }
-          />
-          {routes}
-          <Route path="*" element={<Navigate to="/" />}/>
-        </Routes>
-      </BrowserRouter>
+      <MobileMenuProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route 
+              path="/" 
+              element={
+                <MainPage
+                  data={data.find(p => p.name.toLowerCase() === "earth")}
+                />
+              }
+            />
+            {routes}
+            <Route path="*" element={<Navigate to="/" />}/>
+          </Routes>
+        </BrowserRouter>
+      </MobileMenuProvider>
     </>
   )
 }

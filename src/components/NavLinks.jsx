@@ -4,8 +4,11 @@ import style from "./NavLinks.module.scss"
 import BorderLine from "./BorderLine";
 import IconChevron from "../icons/IconChevron";
 import MiniPlanet from "./MiniPlanet";
+import { useMobileMenu, useMobileMenuUpdate } from "../contexts/MobileMenuContext";
 
-export default function NavLinks({ className, isOpen, setIsMenuOpen }) {
+export default function NavLinks({ className }) {
+  const isMobileMenuOpen = useMobileMenu()
+  const mobileMenuUpdate = useMobileMenuUpdate();
 
   if (!data || data.length === 0) {
     return <p>No data available</p>;
@@ -30,7 +33,7 @@ export default function NavLinks({ className, isOpen, setIsMenuOpen }) {
       <li 
         key={e.name} 
         className={style.listItem}
-        onClick={() => setIsMenuOpen(false)}
+        onClick={mobileMenuUpdate}
       >
         <Link
           to={`/${e.name.toLowerCase()}`}
@@ -51,7 +54,7 @@ export default function NavLinks({ className, isOpen, setIsMenuOpen }) {
         {items}
       </ul>
       {
-        isOpen &&
+        isMobileMenuOpen &&
         <ul className={`${style.listMobile} ${className}`}>
           {itemsMobile}
         </ul>
