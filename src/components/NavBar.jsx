@@ -3,8 +3,12 @@ import style from "./NavBar.module.scss";
 import IconHamburger from "../icons/IconHamburger";
 import BorderLine from "./BorderLine";
 import NavLinks from "./NavLinks";
+import { useContext } from "react";
+import { MenuContext } from '../pages/MainPaige';
 
 export default function NavBar({ isMenuOpen, setIsMenuOpen }) {
+  const {isMobileMenuOpen,  onChangeMobileMenu } = useContext(MenuContext);
+
   return (
     <>
       <nav className={style.navContainer}>
@@ -12,13 +16,13 @@ export default function NavBar({ isMenuOpen, setIsMenuOpen }) {
           <Link to="/" className={style.navTitle}><h1>THE PLANETS</h1></Link>
           <button
             className={style.btn}
-            onClick={() => setIsMenuOpen(s => !s)}
+            onClick={onChangeMobileMenu}
           >
-            <IconHamburger className={isMenuOpen ? style.menuOpen : style.menuClose}/>
+            <IconHamburger className={isMobileMenuOpen ? style.menuOpen : style.menuClose}/>
           </button>
         </div>
         <BorderLine className={style.navHeaderSeparator}/>
-        <NavLinks isOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
+        <NavLinks isOpen={isMobileMenuOpen} setIsMenuOpen={onChangeMobileMenu}/>
       </nav>
       <BorderLine className={style.navSeparator}/>
     </>

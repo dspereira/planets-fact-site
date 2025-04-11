@@ -4,7 +4,7 @@ import './App.css'
 import NavBar from './components/NavBar'
 
 import data from "./data/data.json"
-import MainPage from "./pages/MainPaige";
+import { MainPage } from "./pages/MainPaige";
 
 function App() {
 

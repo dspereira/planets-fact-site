@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import Button from "../components/Button";
 import InfoCard from "../components/InfoCard";
 import NavBar from "../components/NavBar";
@@ -14,7 +14,10 @@ const tabNames = {
   3: "geology"
 }
 
-export default function MainPage({ data }) {
+export const MenuContext = createContext();
+
+
+export  function MainPage({ data }) {
   const [activeTab, setActiveTab] = useState(tabNames[1]);
   const [planetName, setPlanetName] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,10 +30,15 @@ export default function MainPage({ data }) {
   return (
     <>
       <header>
-        <NavBar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
+        <MenuContext.Provider
+          value= {{
+            isMobileMenuOpen: isMenuOpen,
+            onChangeMobileMenu: () => setIsMenuOpen(s => !s)
+          }}
+        >
+          <NavBar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}/>
+        </MenuContext.Provider>
       </header>
-      {/* <main className={`${isMenuOpen ? style.hide : style.show}`}> */}
-
       <main className={isMenuOpen ? style.mainVisibility : ""}>
         <section className={style.gridMain}>
 
