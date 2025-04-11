@@ -24,10 +24,13 @@ Users should be able to:
 ### Screenshot
 
 #### Desktop
+![desktop](./screenshots/desktop.png)
 
+#### Tablet
+![desktop](./screenshots/tablet.png)
 
 #### Mobile
-
+![desktop](./screenshots/mobile.png)
 
 ### Links
 
