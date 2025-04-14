@@ -9,21 +9,31 @@ import PlanetImage from "../components/PlanetImage";
 import BorderLine from "../components/BorderLine";
 import { useMobileMenu } from "../contexts/MobileMenuContext";
 
-const tabNames = {
-  1: "overview",
-  2: "structure",
-  3: "geology"
-}
+const tabNames = ["overview", "structure", "geology"];
 
 export  function MainPage({ data }) {
-  const [activeTab, setActiveTab] = useState(tabNames[1]);
+  const [activeTab, setActiveTab] = useState(0);
   const [planetName, setPlanetName] = useState("");
   const isMobileMenuOpen = useMobileMenu(); 
   
   if (data.name.toLowerCase() !== planetName) {
     setPlanetName(data.name.toLowerCase());
-    setActiveTab(tabNames[1]);
+    setActiveTab(0);
   }
+
+  function getButtonMenu(options) {
+    return options.map((elm, idx) =>
+      <Button
+        key={idx}
+        planetName={planetName}
+        index={`0${idx+1}`}
+        label={elm}
+        isActive={activeTab === idx ? true : false}
+        onClick={() => setActiveTab(idx)}
+      />
+    );
+  }
+
 
   return (
     <>
@@ -38,9 +48,9 @@ export  function MainPage({ data }) {
               key={`${planetName}${activeTab}`}
               planetName={planetName}
               planetImage={
-                activeTab === tabNames[2] ? data.images.internal : data.images.planet
+                activeTab === 1 ? data.images.internal : data.images.planet
               }
-              geologyImage={activeTab === tabNames[3] && data.images.geology}
+              geologyImage={activeTab === 2 && data.images.geology}
             />
           </div>
           
@@ -60,54 +70,17 @@ export  function MainPage({ data }) {
           <div className={style.planetInfo}>
             <PlanetInfo 
               planet={planetName}
-              info={data[activeTab].content}
+              info={data[tabNames[activeTab]].content}
             >
             </PlanetInfo>
           </div>
           
           <div className={`${style.buttons} ${style.btnWide}`}>
-            <Button
-              planetName={planetName}
-              index="01"
-              label="overview"
-              isActive={activeTab === tabNames[1] ? true : false}
-              onClick={() => setActiveTab(tabNames[1])}
-            />
-            <Button
-              planetName={planetName}
-              index="02"
-              label="internal structure"
-              isActive={activeTab === tabNames[2] ? true : false}
-              onClick={() => setActiveTab(tabNames[2])}
-            />
-            <Button
-              planetName={planetName}
-              index="03"
-              label="surface geology"
-              isActive={activeTab === tabNames[3] ? true : false}
-              onClick={() => setActiveTab(tabNames[3])}
-            />
+            {getButtonMenu(["overview", "internal structure", "surface geology"])}
           </div>
 
           <div className={`${style.buttons} ${style.btnLow}`}>
-            <Button
-              planetName={planetName}
-              label="overview"
-              isActive={activeTab === tabNames[1] ? true : false}
-              onClick={() => setActiveTab(tabNames[1])}
-            />
-            <Button
-              planetName={planetName}
-              label="structure"
-              isActive={activeTab === tabNames[2] ? true : false}
-              onClick={() => setActiveTab(tabNames[2])}
-            />
-            <Button
-              planetName={planetName}
-              label="geology"
-              isActive={activeTab === tabNames[3] ? true : false}
-              onClick={() => setActiveTab(tabNames[3])}
-            />
+            {getButtonMenu(["overview", "structure", "geology"])}
           </div>
 
           <div className={style.boderSeparationButtons}>
